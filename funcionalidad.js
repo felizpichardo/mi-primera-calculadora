@@ -21,6 +21,11 @@ function init() {
     var ocho = document.getElementById ('ocho');
     var nueve = document.getElementById ('nueve');
     var cero = document.getElementById( 'cero' );
+    var punto = document.getElementById( 'punto' );   
+    var porcentaje = document.getElementById( 'porcentaje' );
+    var raiz = document.getElementById('raiz');
+    var potencia = document.getElementById('potencia');
+    
 
     //eventos
     uno.onclick = function(e){
@@ -68,18 +73,44 @@ function init() {
     }
     multiplicacion.onclick = function(e){
         operandoa = resultado_operacion.textContent;
-        operacion = "*";
+        operacion = "x";
         limpiar();
     }
+
     division.onclick = function(e){
         operandoa = resultado_operacion.textContent;
-        operacion = "/";
+        operacion = "÷";
         limpiar();
     }
+    menos.onclick =function (e){
+        var pantalla =resultado_operacion.textContent;
+        pantalla = parseFloat(pantalla);
+        resultado_operacion.textContent = pantalla * -1;
+
+        }
+         
     igual.onclick = function(e){
         operandob = resultado_operacion.textContent;  
         resolver();
     }
+    porcentaje.onclick=function(e){
+        operandoa=resultado_operacion.textContent;
+        operacion= "%";
+        limpiar();
+    }
+    punto.onclick=function(e){
+        operandoa=resultado_operacion.textContent;
+        operacion= ".";
+        limpiar();
+    }  
+    potencia.onclick =function(e){
+        operandoa=resultado_operacion.textContent;
+        operacion= "^";
+        limpiar();
+        
+    }
+
+    funt    
 
     function limpiar (){
         resultado_operacion.textContent = "";
@@ -96,7 +127,7 @@ function init() {
         var primerValor = parseFloat(operandoa)
         var segundoValor = parseFloat(operandob)
 
-        switch(operacion){
+        switch(operacion) {
             case "+":
                 resultado_operacion.textContent = primerValor + segundoValor
                 break;
@@ -105,13 +136,32 @@ function init() {
                 resultado_operacion.textContent = primerValor - segundoValor
                 break;
 
-            case "*":
+            case "x":
                 resultado_operacion.textContent = primerValor * segundoValor
                 break;
 
-            case "/":
-                resultado_operacion.textContent = primerValor / segundoValor
+            case "%":
+                  var valorporcentual= primerValor /100;
+                 
+                  resultado_operacion.textContent= segundoValor * valorporcentual;
+               break;
+
+               
+
+            case "^":
+                resultado_operacion.textContent = Math.pow(primerValor, segundoValor);
+
                 break;
+
+            case "÷":
+    
+                resultado_operacion.textContent = primerValor / segundoValor;
+            
+            break;
+             
+    
+            
         }
     }
+    
 }
