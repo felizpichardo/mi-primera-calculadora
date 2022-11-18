@@ -9,75 +9,61 @@
         <source src="/source/videos/Background.mp4" type="video/mp4">
     </video>-->
 <body onload="init();">
-    <div class="container"></div>
-    <table div class="calculadora"></div>
-        <div class="display"></div>
+    <table div class="calculadora">
         <div id="valor-anterior"></div>
         <div id="valor-actual"></div>
         <tr>
             <td colspan="4"><span id="resultado"></span></td>
         </tr>
-        
-       <tr >      
-            <td><button id="punto">.</button></td>
-            <td><button id="porcentaje">%</button></td>
-            <td><button id= "potencia">^</button></td> 
-            <td><button id="suma">+</button></td>
 
-        </tr>
-        
-            <td><button id="siete">7</button></td>
-            <td><button id="ocho">8</button></td>
-            <td><button id="nueve">9</button></td>
-            <td><button id="division">÷</button></td>
-        </tr>
-        <tr>
-            <td><button id="cuatro">4</button></td>
-            <td><button id="cinco">5</button></td>
-            <td><button id="seis">6</button></td>
-            <td><button id="multiplicacion">x</button></td>
+        <tr >      
+            <td><button class="plata" id="reset">c</button></td>    
+            <td> <button class="plata" id="menos">+/-</button></td>
+            <td><button class="plata " id="porcentaje">%</button></td>
+            <td><button class="naranja" id="division">÷</button></td>
         </tr>
         <tr>
-            <td><button id="uno">1</button></td>
-            <td><button id="dos">2</button></td>
-            <td><button id="tres">3</button></td>
-            <td><button id="resta">-</button></td>
-            
-            
+            <td><button class="gris" id="factorial">x!</button></td>
+            <td><button class="gris" id="raiz">√</button></td>
+            <td><button class="gris" id= "potencia">x<span vertical alignemt>2</span></button></td >
+            <td><button class="naranja" id= "elevacion">x<span vertical alignemt>y</span></button></td>
         </tr>
         <tr>
-    
-            <td><button id="reset">c</button></td>
-            <td><button id="raiz">√</button></td>
-            <td><button id="igual">=</button></td>
-            <td> <button id="menos">+/-</button></td>
-            
+            <td><button class="gris"id="siete">7</button></td>
+            <td><button class="gris" id="ocho">8</button></td>
+            <td><button class="gris"  id="nueve">9</button></td>
+            <td><button class="naranja" id="multiplicacion">×</button></td>
         </tr>
-        <tr>                     
-            <td><button id= "factorial">x!</button></td>
-            <td><button id="cero">0</button></td>
-            <td><button id="reset cols-2">c</button></td>
-        
-            
-
-         </tr> 
-        
+        <tr>
+            <td><button class="gris" id="cuatro">4</button></td>
+            <td><button class="gris" id="cinco">5</button></td>
+            <td><button class="gris" id="seis">6</button></td>
+            <td><button class="naranja" id="resta">-</button></td>
+        </tr>
+        <tr>
+            <td><button class="gris" id="uno">1</button></td>
+            <td><button class="gris" id="dos">2</button></td>
+            <td><button class="gris" id="tres">3</button></td>
+            <td><button class="naranja" id="suma">+</button></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button class="gris" id="cero" >0</button></td>
+             <td><button class="gris" id="punto">.</button></td>
+            <td><button class="naranja" id="igual">=</button></td>
+        </tr>
     
     </table>
 
-    <script src="funcionalidad.js"></script> 
+    <script src="funcionalidad.js"></script>
 
-    
     <video autoplay muted loop>
-        <source src="Background.mp4" type="video/mp4" 
+        <source src="Background.mp4" type="video/mp4"> 
     </video>
-
 </body>
+<script>
+    function alerta(){
+        alert("Estara disponible pronto");
+    }
+</script>
 </html>
-
-
-
-
-
-
 

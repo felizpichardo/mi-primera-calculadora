@@ -1,7 +1,7 @@
 var operandoa;
 var operandob;
 var operacion;
-
+ 
 function init() {
     //variables
     var resultado_operacion = document.getElementById ("resultado");
@@ -24,7 +24,9 @@ function init() {
     var punto = document.getElementById( 'punto' );   
     var porcentaje = document.getElementById( 'porcentaje' );
     var raiz = document.getElementById('raiz');
-    var potencia = document.getElementById('potencia');
+    var pontencial = document.getElementById('potencia');
+    var elevacion = document.getElementById ('elevacion');
+    var factorial = document.getElementById ('factorial' );
     
 
     //eventos
@@ -73,7 +75,7 @@ function init() {
     }
     multiplicacion.onclick = function(e){
         operandoa = resultado_operacion.textContent;
-        operacion = "x";
+        operacion = "×";
         limpiar();
     }
 
@@ -82,13 +84,49 @@ function init() {
         operacion = "÷";
         limpiar();
     }
-    menos.onclick =function (e){
+
+    factorial.onclick= function (e){
+        /*operandoa=resultado_operacion.textContent;
+        operacion= "x!";
+        limpiar();*/
+        alerta();
+        
+    }
+
+
+    elevacion.onclick= function (e){
+        /*operandoa=resultado_operacion.textContent;
+        operacion= "x2";
+        limpiar();*/
+        alerta();
+
+    }
+
+   pontencial.onclick = function (e){
+    /*operandoa=resultado_operacion.textContent;
+    operacion= "xy";
+    limpiar();*/
+    alerta();
+
+    }
+
+    raiz.onclick = function(e){
+        /*operandoa=resultado_operacion.textContent;
+        operacion= "√";
+        limpiar();*/
+        alerta();
+    
+    }
+    
+
+
+
+    menos.onclick = function (e){
         var pantalla =resultado_operacion.textContent;
         pantalla = parseFloat(pantalla);
         resultado_operacion.textContent = pantalla * -1;
+    }     
 
-        }
-         
     igual.onclick = function(e){
         operandob = resultado_operacion.textContent;  
         resolver();
@@ -99,18 +137,12 @@ function init() {
         limpiar();
     }
     punto.onclick=function(e){
-        operandoa=resultado_operacion.textContent;
+        /*operandoa=resultado_operacion.textContent;
         operacion= ".";
-        limpiar();
+        limpiar();*/
+        alerta();
     }  
-    potencia.onclick =function(e){
-        operandoa=resultado_operacion.textContent;
-        operacion= "^";
-        limpiar();
-        
-    }
-
-    funt    
+    
 
     function limpiar (){
         resultado_operacion.textContent = "";
@@ -136,7 +168,7 @@ function init() {
                 resultado_operacion.textContent = primerValor - segundoValor
                 break;
 
-            case "x":
+            case "×":
                 resultado_operacion.textContent = primerValor * segundoValor
                 break;
 
@@ -146,20 +178,29 @@ function init() {
                   resultado_operacion.textContent= segundoValor * valorporcentual;
                break;
 
-               
-
             case "^":
                 resultado_operacion.textContent = Math.pow(primerValor, segundoValor);
 
                 break;
 
             case "÷":
-    
                 resultado_operacion.textContent = primerValor / segundoValor;
             
             break;
-             
-    
+
+            case "x!":
+                resultado_operacion.textContent = primerValor / segundoValor;
+
+            break
+
+            case "√":
+                resultado_operacion.textContent = Math.sqrt(primerValor, segundoValor);
+
+                break;
+
+
+
+
             
         }
     }
