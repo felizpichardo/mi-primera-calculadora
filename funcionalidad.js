@@ -70,7 +70,7 @@ function init() {
     }
     resta.onclick = function(e){
         operandoa = resultado_operacion.textContent;
-        operacion = "-";
+        operacion = "-";   
         limpiar();
     }
     multiplicacion.onclick = function(e){
@@ -86,41 +86,42 @@ function init() {
     }
 
     factorial.onclick= function (e){
-        /*operandoa=resultado_operacion.textContent;
-        operacion= "x!";
-        limpiar();*/
-        alerta();
+        var pantalla =resultado_operacion.textContent;
+        pantalla = parseFloat(pantalla);
+        var total = pantalla
         
+        for (var base = pantalla - 1; base > 1; base--) {
+            total = total * base;
+        }
+        resultado_operacion.textContent = total;
     }
 
 
     elevacion.onclick= function (e){
-        /*operandoa=resultado_operacion.textContent;
-        operacion= "x2";
-        limpiar();*/
-        alerta();
+        operandoa = resultado_operacion.textContent;
+        operacion = "xy";
+        limpiar();
 
     }
 
    pontencial.onclick = function (e){
-    /*operandoa=resultado_operacion.textContent;
-    operacion= "xy";
-    limpiar();*/
-    alerta();
-
+     
+     var pantalla = resultado_operacion.textContent;
+     pantalla = parseFloat(pantalla);
+     resultado_operacion.textContent = Math.pow(pantalla, 2);
+    
+     
     }
+    
 
     raiz.onclick = function(e){
-        /*operandoa=resultado_operacion.textContent;
-        operacion= "√";
-        limpiar();*/
-        alerta();
-    
+        var pantalla = resultado_operacion.textContent;
+        pantalla = parseFloat(pantalla);
+        resultado_operacion.textContent = Math.sqrt(pantalla);
+
     }
     
-
-
-
+    
     menos.onclick = function (e){
         var pantalla =resultado_operacion.textContent;
         pantalla = parseFloat(pantalla);
@@ -137,10 +138,11 @@ function init() {
         limpiar();
     }
     punto.onclick=function(e){
-        /*operandoa=resultado_operacion.textContent;
-        operacion= ".";
-        limpiar();*/
-        alerta();
+        var pantalla = resultado_operacion.textContent
+
+        if (pantalla.indexOf('.') === -1) {
+            resultado_operacion.textContent = resultado_operacion.textContent + '.';
+        }
     }  
     
 
@@ -178,25 +180,20 @@ function init() {
                   resultado_operacion.textContent= segundoValor * valorporcentual;
                break;
 
-            case "^":
-                resultado_operacion.textContent = Math.pow(primerValor, segundoValor);
-
-                break;
+            case "xy":
+                resultado_operacion.textContent = Math.pow(primerValor,segundoValor)
+    
+            break;
 
             case "÷":
                 resultado_operacion.textContent = primerValor / segundoValor;
             
             break;
 
-            case "x!":
-                resultado_operacion.textContent = primerValor / segundoValor;
+            
 
-            break
-
-            case "√":
-                resultado_operacion.textContent = Math.sqrt(primerValor, segundoValor);
-
-                break;
+    
+    
 
 
 
